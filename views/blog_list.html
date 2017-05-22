@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title><%= title %></title>
+	
+	<link rel="stylesheet" href="/stylesheets/bootstrap.min.css" />
+	<link rel="stylesheet"  href="/stylesheets/editor-blog.css">
+	<style>
+
+		
+	</style>
+	<script src="/javascripts/jquery-2.2.3.min.js"></script>
+	<script src="/javascripts/style.js"></script>
+	<script type="text/javascript">
+	jQuery(document).ready(function($) 
+	{
+		$('.list ul li p').clickdown();
+		$('.list-se p[class=title]').clickup();
+		$('.list>ul>li').ad();
+		
+	});
+	</script>
+	<!--配置文件-->
+	<script src="/ueditor/ueditor.config.js"></script>
+	<!--编辑器文件-->
+	<script src="/ueditor/ueditor.all.min.js"></script>
+	<script src="/ueditor/lang/zh-cn/zh-cn.js"></script>
+</head>
+<body>
+	<div class="container-fluid" style="overflow:hidden">
+		<div class="row">
+			<div class="col-md-2 hidder-xs hidder-sm ding" >
+				<div class="logo">
+					<img src="/images/logo.png">
+					<h4>Share管理后台</h4>
+				</div>
+				<div class="list">
+					<ul>
+						<li>
+							<p class="title">内容管理</p>
+							<ul class='list-se'>
+								<p class="title">内容管理</p>
+								<li><p>新的文章</p></li>
+								<li><p>文章管理</p></li>
+								<li><p>li-2</p></li>
+								<li><p>li-3</p></li>
+							</ul>
+						</li>
+						<li>
+							<p class="title">Item2</p>
+							<ul class='list-se'>
+								<p class="title">Item2</p>
+								<li><p>li-1</p></li>
+								<li><p>li-2</p></li>
+								<li><p>li-3</p></li>
+								<li><p>li-4</p></li>
+								<li><p>li-5</p></li>
+								<li><p>li-6</p></li>
+							</ul>
+						</li>
+						<li>
+							<p class="title">Item3</p>
+							<ul class='list-se'>
+								<p class="title">Item3</p>
+								<li><p>li-1</p></li>
+								<li><p>li-2</p></li>
+								<li><p>li-3</p></li>
+							</ul>
+						</li>
+						<li>
+							<p class="title">Item4</p>
+							<ul class='list-se'>
+								<p class="title">Item4</p>
+								<li><p>li-1</p></li>
+								<li><p>li-2</p></li>
+								<li><p>li-3</p></li>
+							</ul>
+
+						</li>
+						<li>
+							<p class="title">foot5</p>
+						</li>
+					</ul>
+				</div>
+			</div>
+
+       <!--右侧操作部分-->
+       	<div class="col-md-10 blog_list_right" >
+			<h3 class="bo_ke_lie_biao">博客列表</h3>
+			<table class="table table-bordered" width=600>
+				<thead>
+					<th>发表日期</th>
+					<th>标题</th>
+					<th>标签类别</th>
+					<th>操作</th>
+				</thead>
+				<tbody>
+				<% if(blogList.length){
+				blogList.forEach(function(item){%>
+					<tr>
+						<td><%= moment(item.meta.createAt).format('MM/DD/YYYY') %></td>
+						<td><%= item.title%></td>
+						<td><%= item.tag%></td>
+						<td>
+							<button class="btn btn-primary">修改</button>
+							<button class="btn btn-primary">删除</button>
+						</td>
+					</tr>
+				<%});}%>
+				</tbody>
+			</table>
+       	</div>
+   		</div>
+	</div>
+</body>
+
+
+</html>

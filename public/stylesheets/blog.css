@@ -1,0 +1,175 @@
+/*博客专页css样式表*/
+*{margin:0;padding: 0;}
+a{
+	cursor: pointer;
+	color:#586477
+}
+
+.navbar{
+	margin-bottom: 0;
+}
+.page{
+	padding:50px 15px 15px 30px;
+	
+	background-color: #f3f3f4;
+	overflow: hidden;
+	font-family: 微软雅黑;
+	color: #586477;
+}
+.aside{
+	
+	min-height: 200px;
+	background-color: white;
+}
+.aside-title-list{
+	
+	text-align: left;
+}
+.aside-tags-list ul>li {
+	text-align: center;
+	height: 50px;
+	display: block;
+	
+}
+.aside-tags-list ul li a{
+	
+	display: block;
+	font-size: 1.2em;
+	margin-top: 8px;
+	text-align: left;
+}
+.aside-tags-list ul li a img{
+	width: 25px;
+	height: 25px;
+	margin:4px 5px;
+}
+.aside-tags-list ul li a:hover{
+	color: #66c8f6;
+}
+.blog-list{
+	
+	min-height: 200px;
+	padding-left:50px; 
+}
+.blog-write-title{
+	min-height: 200px;
+	background-color: white;
+}
+.blog-title-list ul{
+	display: black;
+	
+}
+.blog-title-list ul li{
+	padding:10px;
+	display: black;
+	border-bottom: 1px #ccc dashed;
+}
+.search{
+	
+	height: 33px;
+	position: relative;
+
+}
+.search>span{
+	display: inline-block;
+	font-size: 16px;
+	margin:10px 5px;
+}
+.searchFor{
+	float:right; 
+	position: absolute;
+	top: 8px;
+	left: 550px;
+}
+
+/*以下代码是属于博客文章阅读部分的代码样式表*/
+.article{
+	
+	background-color:white;
+	padding-top: 50px;
+	font-family: 微软雅黑;
+	color: #777;
+}
+.article>span{
+	display: black;
+	margin-left:20px;
+}
+.article .date{
+	text-align: center;
+	margin-top: 20px;
+}
+.article>h2{
+	text-align: center;
+}
+.guding{
+	position: fixed;
+	right: 35px;
+}
+.scroll-nav{
+	padding:10px 20px;
+}
+
+
+/*--------以下样式表示文章阅读中评论部分的---------*/
+#comment{
+	width: 100%;
+	height: 200px;
+	position:relative;
+	padding-top: 10px;
+}
+#comment_box{
+	display: block;
+	border:1px solid #256;
+	width:95%;
+	height: 50%;
+	border-radius: 8px;
+	margin:10px auto;
+	background-color: #fff
+}
+.commentNE{
+	background-color:#f3f3f4;
+	border:none;
+	border-bottom:1px solid #000;
+}
+.liuyan{
+	float:right;
+}
+.comment_kongjian{
+	width: 95%;
+	border: 1px dashed #555;
+	margin:0 auto;
+	overflow: hidden
+}
+hr{
+	border:0;
+	background-color:#122;
+	height:1px;
+	clear:both;
+}
+.comment_list>ul{
+	display: block;
+	padding:5px;
+	height: auto;
+
+}
+.comment_list ul .comments_list{
+	height: 100px;
+	border-top: 1px dashed #999;
+}
+.comment_list ul .comments_list img{
+	width: 70px;
+	height: 70px;
+	float: left;
+	border: 1px dashed #000;
+	margin-right: 5px;
+}
+.comment_list ul .comments_list span{
+	float: right;
+}
+.comments_list a, .comments_list span{
+	
+}
+.comment_list ul li p{
+	padding-left: 90px;
+	padding-top: 10px;
+}

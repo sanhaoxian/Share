@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title><%= title %></title>
+	
+	<link rel="stylesheet" href="/stylesheets/bootstrap.min.css" />
+	<link rel="stylesheet"  href="/stylesheets/editor-blog.css">
+	
+	<script src="/javascripts/jquery-2.2.3.min.js"></script>
+	<script src="/javascripts/style.js"></script>
+	<script type="text/javascript">
+	jQuery(document).ready(function($) 
+	{
+		$('.list ul li p').clickdown();
+		$('.list-se p[class=title]').clickup();
+		$('.list>ul>li').ad();
+		
+	});
+	</script>
+	<!--配置文件-->
+	<script src="/ueditor/ueditor.config.js"></script>
+	<!--编辑器文件-->
+	<script src="/ueditor/ueditor.all.min.js"></script>
+	<script src="/ueditor/lang/zh-cn/zh-cn.js"></script>
+</head>
+<body>
+	<div class="container-fluid" style="overflow:hidden">
+		<div class="row">
+			<div class="col-md-2 hidder-xs hidder-sm ding" >
+				<div class="logo" style="height:150px">
+					<img src="/images/logo.png">
+					<h4>Share管理后台</h4>
+				</div>
+				<div class="list">
+					<ul>
+						<li>
+							<p class="title">内容管理</p>
+							<ul class='list-se'>
+								<p class="title">内容管理</p>
+								<li><p>新的文章</p></li>
+								<li><p>文章管理</p></li>
+								<li><p>li-2</p></li>
+								<li><p>li-3</p></li>
+							</ul>
+						</li>
+						<li>
+							<p class="title">Item2</p>
+							<ul class='list-se'>
+								<p class="title">Item2</p>
+								<li><p>li-1</p></li>
+								<li><p>li-2</p></li>
+								<li><p>li-3</p></li>
+								<li><p>li-4</p></li>
+								<li><p>li-5</p></li>
+								<li><p>li-6</p></li>
+							</ul>
+						</li>
+						<li>
+							<p class="title">Item3</p>
+							<ul class='list-se'>
+								<p class="title">Item3</p>
+								<li><p>li-1</p></li>
+								<li><p>li-2</p></li>
+								<li><p>li-3</p></li>
+							</ul>
+						</li>
+						<li>
+							<p class="title">Item4</p>
+							<ul class='list-se'>
+								<p class="title">Item4</p>
+								<li><p>li-1</p></li>
+								<li><p>li-2</p></li>
+								<li><p>li-3</p></li>
+							</ul>
+
+						</li>
+						<li>
+							<p class="title">foot5</p>
+						</li>
+					</ul>
+				</div>
+			</div>
+
+       <!--右侧操作部分-->
+       	<div class="col-md-10 editor_blog_right" style="position:absolute;left:225px">
+			<a href="#" class="exite">退出登录</a>
+
+			<h3>新的文章</h3>
+
+			<div class="editor">
+				<form class="write" method="post" action="/blog/editor-blog/new">
+				<input type="hidden" name="blog[_id]">
+					<label>标题</label>
+
+					<input type="text" name="blog[title]" class="form-control title" >
+
+					<label>摘要</label>
+
+					<input type="text" name="blog[zhaiyao]" class="form-control">
+					
+					<label>类别标签</label>
+					
+					<div class="radio" >
+						<label>
+						<input name="blog[tag]" type="radio" name="fenlei" value="摄影">摄影
+						</label>
+
+						<label>
+						<input name="blog[tag]" type="radio" name="fenlei" value="技术">技术
+						</label>
+
+						<label>
+						<input name="blog[tag]" type="radio" name="fenlei" value="随笔">随笔
+						</label>
+					</div>
+
+					<label>正文</label>
+
+					<div class="ueditor">
+						<script id="container" name="blog[article]" type="text/plain">
+							初始化内容
+						</script>
+						<!--实例化编辑器-->
+						<script type="text/javascript"> 
+							 
+					        var ue = UE.getEditor('container',{ initialFrameHeight: 600});  
+					    </script>
+					</div>
+
+					<button class="btn btn-info" type="submit">发布</button>
+
+					<span style="float:right">字数统计:</span>
+				</form>
+			</div>
+       	</div>
+   		</div>
+	</div>
+</body>
+
+
+</html>

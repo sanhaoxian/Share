@@ -1,0 +1,41 @@
+<% include header.html %>
+
+<h1>Share后台录入页面</h1>
+	<form method="post" , action="/admin/new">
+		<table class="table" style="width:800px;margin:0 auto">
+			<tbody>
+				<tr>
+					<input type="hidden" name="article[_id]" value="<%= article._id %>">
+				</tr>
+				<tr>
+					<th style="text-align:center">标题</th>
+					<td>
+						<input type="text" name="article[wtitle]" value="<%= article.wtitle %>" class="form-control">
+					</td>
+				</tr>
+
+				<tr>
+					<th style="text-align:center">引导语</th>
+					<td>
+						<input type="text" name="article[explain]" value="<%= article.explain %>" class="form-control">
+					</td>
+				</tr>
+
+				<tr>
+					<th style="text-align:center">上传照片</th>
+					<td>
+						<input type="text" name="article[photo]" value="<%= article.photo %>" class="form-control">
+					</td>
+				</tr>
+
+				<tr>
+					<th style="text-align:center">内容</th>
+					<td>
+						<input type="" name="article[neirong]" value="<%= article.neirong %>" class="form-control">
+					</td>
+				</tr>
+			</tbody>
+		</table>
+		<button type="submit" class="btn btn-info">发布</button>
+	</form>
+<% include footer.html %>

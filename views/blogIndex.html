@@ -1,0 +1,81 @@
+<% include header.html %>
+
+<div class="container-fluid page" >
+	<div class="row">
+
+		<div class="col-md-2 aside category-block hidden-sm hidden-xs" >
+			<div class="aside-title-list">
+				<h4>文章分类</h4>
+			</div>
+			<div style="height:20px;"></div>
+
+			<nav class="aside-tags-list">
+				<ul>
+					<li><a href="#"><img src="/images/全部分类.svg">全部文章</a></li>
+					<li><a href="#"><img src="/images/nodejs.svg">Nodejs</a></li>
+					<li><a href="#"><img src="/images/js.svg" width="20" height="20">Javascript</a></li>
+					<li><a href="#"><img src="/images/jquery.svg">jQuery</a></li>
+					<li><a href="#"><img src="/images/angular.svg">Angularjs</a></li>
+					<li><a href="#"><img src="/images/html.jpg">Html5</a></li>
+					<li><a href="#"><img src="/images/css3.jpg">Css3</a></li>
+				</ul>
+			</nav>
+		</div>
+
+		<div class="col-md-8 blog-list" >
+			<div class="row">
+				<div class="col-md-12 blog-write-title" >
+					<section class="blog-title-list">
+						<div class="search">
+							<span>日期</span><span>标题</span>
+							<div class="row" >
+							<div class="col-lg-4 searchFor" style="float:right">
+							    <div class="input-group">
+							      <div class="input-group-btn">
+							        <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">标题<span class="caret"></span></button>
+							        <ul class="dropdown-menu" role="menu">
+							          <li><a href="#">日期</a></li>
+							          <li><a href="#">标签</a></li>
+							        </ul>
+							      </div><!-- /btn-group -->
+							      <input type="text" class="form-control" placeholder="关键字">
+							      <div class="input-group-btn">
+							        <button type="button" class="btn btn-default">搜索</span></button>
+							        
+							        </ul>
+							      </div>
+							    </div><!-- /input-group -->
+							</div><!-- /.col-lg-6 -->
+							</div>
+
+						</div>
+						<hr >
+						<ul>
+						<% if(blogs.length){
+						blogs.forEach(function(item){ 
+						%>
+							<li>
+								<h4><a href="/blog/blog-share/<%= item._id%>"><%= item.title %></a></h4>
+								<!--<span>作者</span>-->
+								<span><span class="glyphicon glyphicon-time"></span>：<%= moment(item.meta.createAt).format('MM/DD/YYYY') %></span>
+								<span><span class="glyphicon glyphicon-tree-deciduous"></span>：<%= item.tag%></span>
+								<p>摘要：<%= item.zhaiyao %></p>
+								<span>阅读:<%- item.pv %></span>|
+								<span><a>评论:0</a></span>
+							</li>
+						<% });} %>
+						</ul>
+
+					</section>
+				</div>
+			</div>
+		</div>
+
+		<div class="col-md-2"></div>
+
+	</div>
+</div>
+<script>
+	
+</script>
+<% include footer.html %>

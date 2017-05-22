@@ -1,0 +1,187 @@
+*{  margin: 0;  padding:0;  }
+header{  padding:0;  }
+body{
+    position: relative;
+}
+a{
+    text-decoration: none;
+}
+li{
+    list-style: none;
+}
+#Display{
+    width:100%;
+    height:700px;
+    overflow: hidden;
+    position: absolute;
+    top:50px;
+    left:0;
+    overflow: hidden;
+}
+.image-box{
+    overflow: hidden;
+}
+#image-box li{
+    display: none;
+    width:100%;
+    height:auto;
+    position: absolute;
+    top:0;
+    left:0;
+}
+#image-box li img{
+    width:100%;
+    height:auto;
+    z-index: 1;
+}
+/* What is C & Y 首页的第二部分 解释什么是这个网站*/
+#what{
+    width:100%;
+    height:700px;
+    border:2px solid black;
+    position: absolute;
+    top:555px;
+}
+#what>h3{
+    text-align: center;
+   margin-top: 60px;
+}
+#what_ul{
+    width: 100%;
+    border: 1px solid black;
+    position: absolute;
+    top: 130px
+}
+#what_ul li {
+  float: left;
+  display: block;
+  border: 1px solid red;
+  width: 256px;
+  height: 356px;
+  margin-left: 148px;
+  text-align: center;
+}
+.what_div{
+    width:250px;
+    height: 250px;
+    border: 1px solid white;
+    margin:3px;
+    border-radius: 50%;
+    text-align: center;
+    -moz-box-shadow: 2px 2px 10px #909090;
+    -webkit-box-shadow: 2px 2px 10px #909090;
+    box-shadow:2px 2px 10px #909090;
+}
+
+/* how部分*****如何去使用share*/
+#how{
+    width:100%;
+    height:580px;
+    border:2px solid blue;
+    position: absolute;
+    top: 1140px;
+    background:#f5f6fa;
+}
+#how>h3{
+    text-align: center;
+    margin-top: 50px;
+}
+#how_ul{
+    width:100%;
+    height: 385px;
+   
+    overflow: hidden;
+    margin-top:80px;
+}
+.how_li{
+
+    display: block;
+    float:left;
+    width:270px;
+    height:360px;
+    border:2px solid white;
+    -webkit-border-radius:18px;
+    -moz-border-radius:18px;
+    border-radius:18px;
+    margin-left: 135px;
+    margin-top: 10px;
+
+    -moz-box-shadow: 2px 2px 10px #909090;
+    -webkit-box-shadow: 2px 2px 10px #909090;
+    box-shadow:2px 2px 10px #909090;
+}
+/*-------------------------------------------------------------
+图片轮播和展示部分
+
+*/
+
+.container {
+  max-width: 1100px; 
+}
+.carousel {
+  margin: 0 30px;
+  max-width: 1100px;
+}
+#single .row{
+    margin: 0;  
+}
+.carousel .carousel-control {
+  background: none;           /*将控件的后面背景阴影去掉，它是由background-image产生的*/
+  color: transparent;       /*字体颜色设置成透明，隐藏或直接删掉字体就没有pre*/
+  overflow: hidden;         /*防止溢出*/
+  text-shadow: none;            /*取消文字阴影*/
+  -webkit-transition: all .8s ease-in-out;
+  transition: all .8s ease-in-out;       /*设定动效时间，所有属性all 时间为0.3s*/
+  width: 30px;                      /*设置图标宽度*/
+}
+.carousel .carousel-control:before {
+  color: #000;                          /*设置样式颜色*/
+  font-family: 'Glyphicons Halflings';
+  position: absolute;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+   transform: translateY(-50%);
+  width: 30px;
+}
+.carousel .carousel-control.left {
+  left: -30px;
+}
+.carousel .carousel-control.left:before {
+  content: '\e079';
+}
+.carousel .carousel-control.right {
+  right: -30px;
+}
+.carousel .carousel-control.right:before {
+  content: '\e080';
+}
+#play{
+    position: absolute;
+    top: 1719px;
+    width: 100%;
+    overflow: hidden;
+    padding: 40px 20px;
+    text-align: center;
+}
+/*
+------------------------------------------------------------------
+脚部部分样式
+ */
+#footer{
+    border: 1px solid black;
+    width: 100%;
+    height: 240px;
+    position: absolute;
+    top:2000px;
+    background-color: #373b44;
+    color: #ccc
+}
+.table{
+    width:850px;
+    margin:-10px auto;
+}
+th{text-align: center;
+border-bottom: 0;}
+td{text-align: center;
+border-top: 0;
+font-size: 12px}

@@ -1,0 +1,41 @@
+<% include header.html %>
+<div class="page">
+	<div class="container ">
+		<div class="row">
+			<div class="col-md-9" style="border:1px dashed red;min-height:100px;">
+
+
+				<div class="article">
+					<span><%= blog.tag %></span>
+					<p class="date"><%- moment(blog.meta.createAt).format('MM/DD/YYYY')%></p>
+					<h2><%= blog.title %></h2>
+					<div style="border-left:10px solid #ccc;height:20px">
+						<p style="margin-left:20px">摘要:<%= blog.zhaiyao%></p>
+					</div>
+					
+					<!--文章正文-->
+					<%- blog.article %>
+
+
+				</div>
+				
+				<%- include comment.html %>
+			</div>
+
+			<div class="col-md-3 hidden-sm hidden-xs guding" style="background-color:#fff;">
+				<nav class="scroll-nav" style="height:200px;">
+					<h4>文章目录</h4>
+					<ul>
+						<li>第一章</li>
+						<li>第二章</li>
+						<li>第三章</li>
+					</ul>
+				</nav>
+				
+			</div>
+			
+		</div>
+	</div>
+</div>
+</body>
+<%include footer.html%>

@@ -1,0 +1,32 @@
+<% include header.html %>
+<form >
+	<table class="table table-bordered">
+		<tbody>
+		    <tr>
+				<td>ID</td>
+				<td><%= article._id %></td>
+		    </tr>
+			<tr>
+				<td>标题</td>
+				<td><%= article.wtitle%></td>
+			</tr>
+
+			<tr>
+				<td>引导语</td>
+				<td><%= article.explain%></td>
+			</tr>
+
+			<tr>
+				<td>照片</td>
+				<td><%= article.photo%></td>
+			</tr>
+
+			<tr>
+				<td>内容</td>
+				<td><%= article.neirong%></td>
+			</tr>
+		</tbody>
+	</table>
+	<a href="/admin/update/<%= article._id %>" class="btn btn-info">修改</a>
+</form>
+<% include footer.html %>

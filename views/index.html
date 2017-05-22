@@ -1,0 +1,178 @@
+<% include header.html %>
+<section role="Display" id="Display" >
+    <ul class="image-box" id="image-box">
+        <li style="display: block">
+            <img src="images/image-1.jpg">
+        </li>
+        <li><img src="images/image-2.jpg"></li>
+    </ul>
+</section>
+</div>
+
+<section id="what">
+    <h3>what is Share</h3>
+    <ul id="what_ul">
+        <% if (articles.length) {
+         articles.forEach(function(item,index){
+         %>
+            <li class="what_li">
+                <div class="what_div" style="overflow:hidden;">
+                    <a href="/article/<%= item._id %>"><img src="<%= item.poster %>"></a>
+                </div>
+                <h4><%= item.wtitle %></h4>
+                <p><%= item.explain %></p>
+            </li>
+        <% })} %>
+    </ul>
+</section>
+
+<section id="how" >
+	<h3>如何使用Share</h3>
+    <ul id="how_ul">
+        <li class="how_li"><p></p></li>
+        <li class="how_li"><p></p></li>
+        <li class="how_li"><p></p></li>
+    </ul>
+</section>
+    
+<section id="play" style="">
+    <div class="container">
+        <div id="single" class="carousel slide" data-ride="carousel" data-shift="1">
+        
+            <div class="carousel-inner">
+                <ul class="row item active">
+                    <li class="col-xs-4 one">
+                        <img src="images/素材1.png" class="img-responsive">
+                    </li>
+                    <li class="col-xs-4 two">
+                        <img src="images/素材2.png" class="img-responsive">
+                    </li>
+                    <li class="col-xs-4 three">
+                        <img src="images/素材3.png" class="img-responsive">
+                    </li>
+                </ul>
+                <ul class="row item">
+                    <li class="col-xs-4 four">
+                        <img src="images/素材1.png" class="img-responsive">
+                    </li>   
+                    <li class="col-xs-4 five">
+                        <img src="images/素材2.png" class="img-responsive">
+                    </li>
+                    <li class="col-xs-4 six">
+                        <img src="images/素材3.png" class="img-responsive">
+                    </li>
+                </ul>
+            </div>
+
+            <a class="carousel-control left" href="#single" data-slide="prev">Previous</a>
+            <a class="carousel-control right" href="#single" data-slide="next">Next</a>
+        </div>
+    </div>
+
+<script>
+var carousels = $('.carousel');
+carousels.each(function() {
+  var $obj = $(this);
+  var $inner = $obj.find('.carousel-inner');
+  
+  var id = 'uuid' + new Date().getTime();
+  $obj.addClass(id);
+
+  if ($obj.data('shift') === 1) {
+    var items = $obj.find('.item > [class*="col-"]'),
+        visibleCnt = $obj.find('.item:first [class*="col-"]').length,
+        wrapper = "";
+    
+    // build styles
+    var rule_base = '.carousel.' + id + ' .carousel-inner > .item',
+        styles = $('<style></style>'),
+        rules = [];
+        rules[0] = rule_base + '.next {left: ' + (100 / visibleCnt) + '%; transform: none;transition: all .3s ease-in-out;}';
+        rules[1] = rule_base + '.active {left: 0;transition: all .3s ease-in-out;}';
+        rules[2] = rule_base + '.active.left {left: -' + (100 / visibleCnt) + '%; transform: none;transition: all .3s ease-in-out;}';
+        rules[3] = rule_base + '.next.left {left: 0;transition: all .3s ease-in-out;}';
+        rules[4] = rule_base + '.active.right {left: ' + (100 / visibleCnt) + '%; transform: none;transition: all .3s ease-in-out;}';
+        rules[5] = rule_base + '.prev.right {left: 0;transition: all .3s ease-in-out;}';
+        rules[6] = rule_base + '.prev {left: -' + (100 / visibleCnt) + '%; transform: none;transition: all .3s ease-in-out;}';
+    for (var i = 0; i < rules.length; i++) {
+      styles.append(rules[i]);
+    }
+    $obj.prepend(styles);
+
+    // rebuild items
+    for (var i = 0; i < $(items).length; i++) {
+      var $item = $(items[i]);
+      var parent = $item.parent();
+      if (parent.hasClass('item')) {
+        if (!wrapper.length) {
+          wrapper = parent.clone().removeClass('active').html('');
+        }
+        $item.unwrap();
+      }
+      
+      var itemGroup = [$item];
+      for (var x = 1; x < visibleCnt; x++) {
+        var a = i + x;
+        var next = $(items[a]);
+        if (!next.length) {
+          next = $(items[(a - $(items).length)]);
+        }
+        itemGroup[x] = next.clone();
+      }
+      var newSet = wrapper.clone().html(itemGroup);
+      if (i == 0) {
+        newSet.addClass('active');
+      }
+      newSet.appendTo($inner);
+    }
+  }
+});
+</script>
+</section>
+
+<footer role="footer" id="footer" class="panel">
+    <table class="table table-scripted" >
+        <thead>
+            <tr>
+                <th rowspan="5"><img src="images/pikachu.png"></th>
+                <th style="border-bottom:0">制作者:ChenYong</th>
+                <th style="border-bottom:0">使用插件 & 技术:</th>
+                <th style="border-bottom:0">参考资料</th>
+                <th style="border-bottom:0">参考网站</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td style="border-top:0">生命不息，折腾不止</td>
+                <td style="border-top:0">bootstrap</td>
+                <td style="border-top:0">nodejs登录注册案例</td>
+                <td style="border-top:0">https://getmagpie.com/</td>
+            </tr>
+
+            <tr>
+                <td style="border-top:0"></td>
+                <td style="border-top:0">scrollify</td>
+                <td style="border-top:0">nodejs基本案例</td>
+                <td style="border-top:0"></td>
+            </tr>
+
+            <tr>
+                <td style="border-top:0"></td>
+                <td style="border-top:0">express</td>
+                <td style="border-top:0">mongoodb&mogoose基本知识</td>
+                <td style="border-top:0"></td>
+            </tr>
+
+            <tr>
+                <td style="border-top:0"></td>
+                <td style="border-top:0">underscore</td>
+                <td style="border-top:0"></td>
+                <td style="border-top:0"></td>
+
+            </tr>
+        </tbody>
+    </table>
+</footer>
+</body>
+<script src="/javascripts/index.js"></script>
+<% include footer.html %>
